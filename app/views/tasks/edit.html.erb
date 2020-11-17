@@ -1,0 +1,17 @@
+<div class='container m-4'> 
+  <div class='mb-4'>
+    <h1>Edit a task</h1>
+  </div>
+  <%= form_for (@task) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+    <%= f.submit %>
+  <% end %>
+  <div class="mt-4">
+    <button class="btn btn-outline-primary"><%= link_to "Back to list", task_list_path %></button>
+  </div>
+</div>

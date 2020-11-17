@@ -1,0 +1,17 @@
+<div class='container m-4'>
+  <div class="card">
+    <div class="card-header d-flex justify-content-between">
+      <%= @task.title %>
+      <%= link_to "Edit task", task_edit_path %>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p><%= @task.details %></p>
+        <footer class="blockquote-footer"><cite title="Source Title"><%= @task.completed ? "Done!" : "Not done" %></cite></footer>
+      </blockquote>
+    </div>
+  </div>
+  <div class="mt-4">
+    <button class="btn btn-outline-primary"><%= link_to "Back to list", task_list_path %></button>
+  </div>
+</div>

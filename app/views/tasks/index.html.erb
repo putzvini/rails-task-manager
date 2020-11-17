@@ -1,0 +1,11 @@
+<div class='container m-4'>
+  <h1>My tasks list</h1>
+  <div class='mt-2 mb-4'>
+    <ul class="list-group list-group-flush">
+    <% @tasks.each_with_index do |task, index| %>
+      <li class="list-group-item"><%= index + 1 %> - <%= link_to task.title, task_path(task) %> - <%= task.completed ? "[x]" : "[  ]" %> - <%= link_to "delete task", task_destroy_path(task), method: :delete, data: { confirm: "Are you sure?"} %></li>
+    <% end %>
+    </ul>
+  </div>
+  <button class="btn btn-outline-primary"><%= link_to "Create new task", task_new_path %></button>
+</div>
